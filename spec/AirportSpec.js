@@ -35,7 +35,13 @@ describe('An Airport', function(){
     });
   });
 
-
+    describe('default capacity', function() {
+      it('has capacity when capacity not given', function() {
+        airport = new Airport()
+        expect(airport.capacity).toEqual(5)
+        expect(airport.planes).toEqual(Array(0))
+      });
+    });
 });
 
 // describe('Plane', function(){

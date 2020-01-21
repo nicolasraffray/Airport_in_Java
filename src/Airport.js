@@ -1,6 +1,6 @@
 var plane = {}
 
-function Airport(capacity, planes_array){
+function Airport(capacity=5, planes_array=[]){
   this.capacity = capacity
   this.planes = planes_array
   this.land = function(plane){

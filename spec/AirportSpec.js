@@ -9,6 +9,12 @@ describe('An Airport', function(){
       airport = new Airport(5, [])
       expect(airport.land(plane)).toContain(plane);
     });
+
+    it('does not land plane, if at capacity', function() {
+      airport = new Airport(1, [plane])
+      airport.land(plane)
+      expect(airport.planes.length).toEqual(1)
+    });
   });
 
   describe('takeoff', function(){
@@ -28,6 +34,8 @@ describe('An Airport', function(){
       expect(airport.isFull()).toBe(true)
     });
   });
+
+
 });
 
 // describe('Plane', function(){

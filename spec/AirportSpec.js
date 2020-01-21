@@ -1,0 +1,40 @@
+
+
+describe('An Airport', function(){
+  var airport 
+
+  describe('land', function(){
+
+    it('adds a plane into an array', function() {
+      airport = new Airport(5, [])
+      expect(airport.land(plane)).toContain(plane);
+    });
+  });
+
+  describe('takeoff', function(){
+    it('removes a plane from an array', function() {
+      airport = new Airport(5, [plane])
+      expect(airport.takeoff(plane)).not.toContain(plane)
+    });
+  });
+
+  describe('isFull', function() {
+    it('returns true if airport is full', function() {
+      airport = new Airport(2, [plane, plane])
+      expect(airport.isFull()).toBe(true)
+    });
+    it('returns true if airport is over capacity', function(){
+      airport = new Airport(1, [plane, plane])
+      expect(airport.isFull()).toBe(true)
+    });
+  });
+});
+
+// describe('Plane', function(){
+//   var plane 
+
+//   describe('a plane', function(){
+
+//     it('it exists')
+//   })
+// })
